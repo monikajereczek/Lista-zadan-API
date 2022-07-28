@@ -1,0 +1,43 @@
+
+<html><body>
+    <style>
+        li:empty {
+           display: none; 
+        }
+        ul{
+            list-style-type: none;
+        }
+    </style>
+    <h1>Notes</h1>
+    <ul>
+        {% for note in sn %}
+
+        <li>Title:   {{ note.title }}</li>
+        <li>Due date:    {{ note.due_date }}</li>
+        <li>Note:   {{ note.text_note }}</li>
+        -----------------------
+        <p></p>
+        {% endfor %}
+        {% for note in un %}
+        <li>Title:    {{ note.title }}</li>
+        <li>Due date:    {{ note.due_date }}</li>
+        <li>URL:   <a href={{note.url_note}}> {{note.url_note}} </a> </li>
+        -----------------------
+        <p></p>
+        {% endfor %}
+        {% for note in ln %}
+        <li>Title:    {{ note.title }}</li>
+        <li>Due date:    {{ note.due_date }}</li>
+        <ul>
+        <li>Note:    {{ note.text }}</li>
+        <li>Is it done?:    {{ note.done }}</li>
+        </ul>
+        -----------------------
+        <p></p>
+        {% endfor %}
+
+        <p></p>
+
+    </ul>
+
+</body></html>
